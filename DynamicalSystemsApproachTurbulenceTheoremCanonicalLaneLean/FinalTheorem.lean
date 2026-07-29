@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicalSystemsApproachTurbulenceTheoremCanonicalLaneLean.SystemStateVector
+import HautevilleHouse.DynamicalSystemsApproachTurbulenceTheoremCanonicalLaneLean.AttractorStructure
+import HautevilleHouse.DynamicalSystemsApproachTurbulenceTheoremCanonicalLaneLean.EnergyCascade
+import HautevilleHouse.DynamicalSystemsApproachTurbulenceTheoremCanonicalLaneLean.ReynoldsNumberLayer
+import HautevilleHouse.DynamicalSystemsApproachTurbulenceTheoremCanonicalLaneLean.DissipationLayer
+
+namespace HautevilleHouse
+namespace DynamicalSystemsApproachTurbulenceTheoremCanonicalLaneLean
+
+def ConstrainedTheoremClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_theorem_closure (A : AdmissibleClass) :
+    ConstrainedTheoremClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalSystemsApproachTurbulenceTheoremCanonicalLaneLean
+end HautevilleHouse
